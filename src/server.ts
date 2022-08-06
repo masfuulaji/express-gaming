@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 
 dotenv.config();
 import categoryRoutes from "./routes/categories";
+import gameRoutes from "./routes/games";
+import developerRoutes from "./routes/developers";
 
 const app: Express = express();
 
@@ -16,6 +18,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 // route
 app.use("/api/category", categoryRoutes);
+app.use("/api/game", gameRoutes);
+app.use("/api/developer", developerRoutes);
 app.use("/", (req: Request, res: Response) => {
     res.send("Welcome to Hell");
 });
