@@ -15,6 +15,14 @@ const GameSchema: Schema = new Schema<gameInterface>(
         },
         price:{
             type: Number,
+        },
+        category:{
+            type: [Schema.Types.ObjectId],
+            ref: "Category",
+        },
+        developer:{
+            type: Schema.Types.ObjectId,
+            ref: "Developer",
         }
     },
     {
